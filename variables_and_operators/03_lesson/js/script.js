@@ -1,9 +1,4 @@
-let num1 = prompt("Digit a number");
-let num2 = prompt("Digit other number");
+let n = 2;
+n = n + 1; // n+= 1
 
-num1 = parseFloat(num1);
-num2 = parseFloat(num2);
-
-let media = (num1 + num2) / 2;
-
-alert("You media is: " + media)
+console.log(n)
