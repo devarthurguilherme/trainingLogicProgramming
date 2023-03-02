@@ -1,39 +1,65 @@
-let numberUser = prompt("Digit a number");
+let userNumber = Number(prompt("Digite a number, please"));
 
-write(numberUser);
+let btnPlus = document.querySelector("#plus");
+let btnMult = document.querySelector("#mult");
+let btnDivide = document.querySelector("#divide");
+let btnLess = document.querySelector("#less");
+
+write(userNumber);
 
 function write(message) {
-    let outPut = document.querySelector("#outPut");
-    outPut.innerHTML = message;
+    let output = document.querySelector("#outPut");
+    output.innerHTML = message;
 }
 
-function initialCalc(symbol) {
-    let n1 = document.querySelector("#outPut").textContent;
-    n1 = parseFloat(n1);
-    let n2 = prompt("Digit other number");
-    n2 = parseFloat(n2);
-    let msg = calc(symbol, n1, n2);
+function toStartCalc(symbol) {
+    let number1 = Number(document.querySelector('#outPut').textContent);
+    let number2 = Number(prompt("Digit other number, please"));
 
+    try{
+        var msg = toCalc(symbol, number1, number2);
+    } catch(e) {
+        alert(e);
+        return;
+    };
+
+    
     write(msg);
 }
 
-function calc(symbol, n1, n2) {
-    let result = 0;
+function toCalc(operation, n1, n2) {
+    console.log(operation);
 
-    switch(symbol) {
-        case '+':
-            result = n1 += n2;
-            break;
-        case '-':
-            result = n1 -= n2;
-            break;
-        case '*':
-            result = n1 *= n2;
-            break;
-        case '/':
-            result = n1 /= n2;
-            break;
-    }
+    if(operation !== '+' && operation !== '-' && operation !== ':' &&operation !== 'x') {
+        throw new Error("Please, digit a symbol valid!");
+    };
 
-    return result;
+    if(isNaN(n1) || isNaN(n2)) {
+        throw new Error("Please, Pass just numbers, ok?");
+    };
+
+    let calculedNumber;
+
+    switch(operation) {
+        case "x":
+            calculedNumber = n1 * n2;
+            break;
+
+        case ":":
+            calculedNumber = n1 / n2;
+            break;
+
+        case "+":
+            calculedNumber = (n1 + n2);
+            break;
+
+        case "-":
+            calculedNumber = n1 - n2;
+            break;
+
+        default:
+            alert("Did you digited something?");
+    };
+
+    return calculedNumber
 }

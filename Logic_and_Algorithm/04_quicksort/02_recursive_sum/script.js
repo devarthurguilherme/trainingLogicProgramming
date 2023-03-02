@@ -10,7 +10,7 @@ console.log(sum([1, 2, 3, 4]));
 
 /*
 p 115
-slice method: It basicly catch a initial index (for parameter) 
+slice method: It basicly catchs a initial index (for parameter) 
 and creates a new array "shadow", but final index not is included
 */
 
