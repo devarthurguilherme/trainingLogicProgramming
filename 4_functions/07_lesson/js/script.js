@@ -8,9 +8,6 @@ let result = toCalc(n1, n2);
 btnAlert.addEventListener("click", toShowAlert);
 btnOutput.addEventListener("click", toShowOutput);
 
-function toGetDates() {
-    
-}
 
 function toCalc(a, b) {
     return a * b;
