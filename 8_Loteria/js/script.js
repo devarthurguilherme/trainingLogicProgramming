@@ -1,15 +1,5 @@
-
-
-/*let sorteados = [];
-
-while(sorteados.length < 6) {
-    let sorteado = sortear();
-    if(sorteados.indexOf(sorteado) === -1) {
-        sorteados[sorteados.length] = sorteado;
-    };
-
-    console.log(sorteados.length, sorteado);
-}*/
+let output = document.querySelector("#output");
+let msg = '';
 
 function arrayNumbers(n) {
     let sorteados = [];
@@ -28,7 +18,22 @@ function arrayNumbers(n) {
     return sorteados;
 };
 
-let arrayLoterry = arrayNumbers(10);
-console.log(arrayLoterry);
-console.log(typeof arrayLoterry)
+let arrayLoterry = arrayNumbers(6);
+
+msg = msg + arrayLoterry.join(" - ");
+let myNumbers = [3, 6, 28, 44, 63, 79];
+
+for(let i = 0; i < 6; i++) {
+    msg += `<p> ${myNumbers[i]}: `;
+
+    if(arrayLoterry.indexOf(myNumbers[i]) === -1) {
+        msg += "not";
+    } else {
+        msg += "yes";
+    };
+
+    msg += "</p>";
+}
+
+output.innerHTML = msg;
 
