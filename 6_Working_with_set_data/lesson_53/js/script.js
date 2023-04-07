@@ -1,8 +1,6 @@
 let output = document.querySelector("#output");
 let msg = "";
 
-
-
 const pen = {
     nome: "pen",
     price: 2.21,
