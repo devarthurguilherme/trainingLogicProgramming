@@ -9,6 +9,8 @@ const Class = [
     {n: "Lea", notes: [1, 7, 6, 8]}
 ];
 
+let totalMedia = 0;
+
 for(let i = 0; i < Class.length; i++) {
     msg += `<h2>Name: ${Class[i].n}</h2>`;
     msg += `<p>Notes are: ${Class[i].notes.join(", ")}</p>`;
@@ -21,10 +23,16 @@ for(let i = 0; i < Class.length; i++) {
     msg += `<p>Total is: ${totalNotes}</p>`;
     msg += `<p>Media is: ${totalNotes / media}</p>`;
     msg += "<hr />";
-}
+
+    totalMedia += totalNotes;
+};
+
+msg += `<p>Media of Class is: ${(totalMedia / Class.length) / Class[0].notes.length}</p>`;
 
 function display(m) {
     output.innerHTML = m;
 };
 
 display(msg);
+console.log((totalMedia / Class.length));
+console.log((Class[0].notes.length));
