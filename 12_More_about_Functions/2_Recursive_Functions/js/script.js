@@ -1,4 +1,9 @@
+let called1 = 0;
+let called2 = 0;
+
 function fibonacci(n) {
+    called1++;
+
     let a = 1;
     let b = 0;
     let temp;
@@ -18,6 +23,8 @@ console.log(fibonacci(6));
 console.log("-------------------------------------------------------");
 
 function fibonacci2(n) {
+    called2++
+    
     if( n <= 2) {
         return 1;
     };
@@ -27,5 +34,6 @@ function fibonacci2(n) {
 
 console.log(fibonacci2(3));
 console.log(fibonacci2(6));
-
-//12min
+console.log("-------------------------------------------------------");
+console.log(called1);
+console.log(called2);
